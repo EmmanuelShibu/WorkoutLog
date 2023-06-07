@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <a href="{%url 'category-add' %}" class="form-control btn btn-outline-danger btn-lg py-5">ADD NEW CATEGORY</a>
+
+        </div>
+        <div class="col-4">
+            <a href="{%url 'category-list' %}" class="form-control btn btn-outline-info btn-lg py-5">LIST ALL CATEGORIES</a>
+        </div>
+
+        <div class="col-4"></div>
+    </div>
+</div>
+{%endblock%}

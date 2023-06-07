@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block body%}
+
+<div class="row mt-md-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <table class="table table-striped ">
+            <tr>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+            {%for category in categories%}
+            <tr>
+                <td>{{category.name}}</td>
+                <td>
+                    <a href="{%url 'category-update' category.id %}" class="btn btn-outline-info">EDIT</a>
+                    <a href="{%url 'category-remove' category.id %}" class="btn btn-outline-danger">DELETE</a>
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+        <a href="{%url 'category-home'%}" class="btn btn-primary">CATEGORY HOME</a>
+        <a href="{%url 'category-add'%}" class="btn btn-primary">ADD MORE CATEGORY</a>
+    </div>
+    <div class="col-2"></div>
+</div>
+</div>
+{%endblock%}

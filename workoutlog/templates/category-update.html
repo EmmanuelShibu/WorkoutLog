@@ -1,0 +1,23 @@
+
+{%extends 'base.html'%}
+{%block body%}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h1>
+                UPDATE CATEGORY
+            </h1>
+            <form action="" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <button type="submit">UPDATE</button>
+            </form>
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+<a href="{%url 'category-home'%}">CATEGORY HOME</a>
+<a href="{%url 'category-list'%}">GO BACK</a>
+{%endblock%}

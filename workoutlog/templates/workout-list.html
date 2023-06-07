@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h2>Workout List</h2>
+  
+  <form method="get" class="mb-4">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" class="form-control">
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+  </form>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Exercise</th>
+        <th>Date</th>
+        <th>Best Weight</th>
+        <th>Reps</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for workout in workouts %}
+        <tr>
+          <td>{{ workout.exercise }}</td>
+          <td>{{ workout.date }}</td>
+          <td>{{ workout.best_weight }}</td>
+          <td>{{ workout.reps }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="6">No workouts found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
